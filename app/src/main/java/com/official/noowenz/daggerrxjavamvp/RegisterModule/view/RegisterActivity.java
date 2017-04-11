@@ -1,9 +1,10 @@
 package com.official.noowenz.daggerrxjavamvp.RegisterModule.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.official.noowenz.daggerrxjavamvp.MyApplication;
@@ -18,12 +19,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
+import io.reactivex.Observer;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.subscribers.DisposableSubscriber;
+import rx.Observable;
 
 import static android.text.TextUtils.isEmpty;
 import static android.util.Patterns.EMAIL_ADDRESS;
 
-public class RegisterActivity extends AppCompatActivity implements IRegisterView{
+public class RegisterActivity extends AppCompatActivity implements IRegisterView {
 
     @BindView(R.id.et_name)
     EditText etName;
@@ -37,6 +43,8 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
     EditText etAddress;
     @BindView(R.id.btn_submit)
     Button btnSubmit;
+    @BindView(R.id.tv_display)
+    TextView tvDisplay;
 
     private DisposableSubscriber<Boolean> disposableObserver = null;
     private Flowable<CharSequence> nameObservable;
@@ -63,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
         initialize();
     }
 
-    private void initialize(){
+    private void initialize() {
         nameObservable = RxTextView.textChanges(etName).skip(2).toFlowable(BackpressureStrategy.LATEST);
         emailObservable = RxTextView.textChanges(etEmail).skip(2).toFlowable(BackpressureStrategy.LATEST);
         passwordObservable = RxTextView.textChanges(etPwd).skip(2).toFlowable(BackpressureStrategy.LATEST);
@@ -71,6 +79,9 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
         addressObservable = RxTextView.textChanges(etAddress).skip(2).toFlowable(BackpressureStrategy.LATEST);
 
         combineLatestEvents();
+
+        btnSubmit.setEnabled(false);
+        btnSubmit.setOnClickListener(v -> doSomeWork());
     }
 
     private void combineLatestEvents() {
@@ -81,8 +92,10 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
                     public void onNext(Boolean formValid) {
                         if (formValid) {
                             btnSubmit.setBackgroundColor(getResources().getColor(R.color.blue));
+                            btnSubmit.setEnabled(true);
                         } else {
                             btnSubmit.setBackgroundColor(getResources().getColor(R.color.red));
+                            btnSubmit.setEnabled(false);
                         }
                     }
 
@@ -146,6 +159,29 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
                     return nameValid && emailValid && passValid && conformPassValid && addressValid;
                 })
                 .subscribe(disposableObserver);
+    }
+
+    private void doSomeWork() {
+        Single.just("nabin")
+                .subscribe(getSingleObserver());
+    }
+
+    private SingleObserver<String> getSingleObserver() {
+        return new SingleObserver<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+
+            @Override
+            public void onSuccess(String value) {
+                tvDisplay.append(" onNext : value : " + value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                tvDisplay.append(" onError : " + e.getMessage());
+            }
+        };
     }
 
     @Override

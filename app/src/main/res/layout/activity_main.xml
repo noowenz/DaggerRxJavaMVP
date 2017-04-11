@@ -63,6 +63,13 @@
             android:inputType="textAutoComplete|textAutoCorrect|textCapSentences"
             android:padding="5dp" />
 
+        <TextView
+            android:id="@+id/tv_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"/>
+
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"
