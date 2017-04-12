@@ -1,4 +1,4 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.presenter;
+package com.official.noowenz.daggerrxjavamvp.registerModule.presenter;
 
 /**
  * Created by ebpearls on 4/10/2017.

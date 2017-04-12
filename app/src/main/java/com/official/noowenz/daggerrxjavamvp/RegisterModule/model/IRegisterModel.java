@@ -1,4 +1,4 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.model;
+package com.official.noowenz.daggerrxjavamvp.registerModule.model;
 
 /**
  * Created by nabin on 4/10/2017.

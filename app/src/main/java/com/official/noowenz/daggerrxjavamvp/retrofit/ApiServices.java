@@ -1,6 +1,6 @@
 package com.official.noowenz.daggerrxjavamvp.retrofit;
 
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.model.RetrofitResponse;
+import com.official.noowenz.daggerrxjavamvp.registerModule.model.RetrofitResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

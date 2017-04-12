@@ -1,5 +1,6 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.view;
+package com.official.noowenz.daggerrxjavamvp.registerModule.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -9,9 +10,10 @@ import android.widget.TextView;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.official.noowenz.daggerrxjavamvp.MyApplication;
 import com.official.noowenz.daggerrxjavamvp.R;
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.injection.DaggerRegisterComponent;
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.injection.RegisterModule;
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.presenter.RegisterPresenterImpl;
+import com.official.noowenz.daggerrxjavamvp.pagination.Pagination;
+import com.official.noowenz.daggerrxjavamvp.registerModule.injection.DaggerRegisterComponent;
+import com.official.noowenz.daggerrxjavamvp.registerModule.injection.RegisterModule;
+import com.official.noowenz.daggerrxjavamvp.registerModule.presenter.RegisterPresenterImpl;
 
 import javax.inject.Inject;
 
@@ -19,12 +21,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
-import io.reactivex.Observer;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.subscribers.DisposableSubscriber;
-import rx.Observable;
 
 import static android.text.TextUtils.isEmpty;
 import static android.util.Patterns.EMAIL_ADDRESS;
@@ -175,6 +175,9 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
             @Override
             public void onSuccess(String value) {
                 tvDisplay.append(" onNext : value : " + value);
+
+                Intent i = new Intent(RegisterActivity.this, Pagination.class);
+                startActivity(i);
             }
 
             @Override

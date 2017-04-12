@@ -1,4 +1,4 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.view;
+package com.official.noowenz.daggerrxjavamvp.registerModule.view;
 
 /**
  * Created by nabin on 4/10/2017.

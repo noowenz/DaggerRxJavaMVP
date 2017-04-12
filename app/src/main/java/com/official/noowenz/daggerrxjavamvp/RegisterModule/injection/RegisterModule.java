@@ -1,10 +1,10 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.injection;
+package com.official.noowenz.daggerrxjavamvp.registerModule.injection;
 
 
 import android.content.res.Resources;
 
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.model.RegisterModelImpl;
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.view.IRegisterView;
+import com.official.noowenz.daggerrxjavamvp.registerModule.model.RegisterModelImpl;
+import com.official.noowenz.daggerrxjavamvp.registerModule.view.IRegisterView;
 import com.official.noowenz.daggerrxjavamvp.injection.ActivityScope;
 import com.official.noowenz.daggerrxjavamvp.retrofit.ApiServices;
 

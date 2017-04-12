@@ -1,10 +1,9 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.presenter;
+package com.official.noowenz.daggerrxjavamvp.registerModule.presenter;
 
-import android.app.Activity;
 import android.content.res.Resources;
 
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.model.RegisterModelImpl;
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.view.IRegisterView;
+import com.official.noowenz.daggerrxjavamvp.registerModule.model.RegisterModelImpl;
+import com.official.noowenz.daggerrxjavamvp.registerModule.view.IRegisterView;
 
 import javax.inject.Inject;
 

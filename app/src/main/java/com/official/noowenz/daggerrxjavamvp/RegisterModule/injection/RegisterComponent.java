@@ -1,6 +1,6 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.injection;
+package com.official.noowenz.daggerrxjavamvp.registerModule.injection;
 
-import com.official.noowenz.daggerrxjavamvp.RegisterModule.view.RegisterActivity;
+import com.official.noowenz.daggerrxjavamvp.registerModule.view.RegisterActivity;
 import com.official.noowenz.daggerrxjavamvp.injection.ActivityScope;
 import com.official.noowenz.daggerrxjavamvp.injection.component.NetComponent;
 

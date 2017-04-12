@@ -1,4 +1,4 @@
-package com.official.noowenz.daggerrxjavamvp.RegisterModule.model;
+package com.official.noowenz.daggerrxjavamvp.registerModule.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
