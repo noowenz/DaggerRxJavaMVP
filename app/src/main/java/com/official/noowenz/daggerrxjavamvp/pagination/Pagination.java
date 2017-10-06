@@ -25,7 +25,6 @@ import io.reactivex.functions.Function;
 import io.reactivex.processors.PublishProcessor;
 
 public class Pagination extends AppCompatActivity {
-
     public static final String TAG = Pagination.class.getSimpleName();
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private PublishProcessor<Integer> paginator = PublishProcessor.create();

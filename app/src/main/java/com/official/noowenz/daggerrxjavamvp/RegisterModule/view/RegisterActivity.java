@@ -2,18 +2,23 @@ package com.official.noowenz.daggerrxjavamvp.registerModule.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jakewharton.rxbinding2.widget.RxTextView;
-import com.official.noowenz.daggerrxjavamvp.MyApplication;
+import com.official.noowenz.daggerrxjavamvp.utils.MyApplication;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import com.official.noowenz.daggerrxjavamvp.R;
 import com.official.noowenz.daggerrxjavamvp.pagination.Pagination;
 import com.official.noowenz.daggerrxjavamvp.registerModule.injection.DaggerRegisterComponent;
 import com.official.noowenz.daggerrxjavamvp.registerModule.injection.RegisterModule;
 import com.official.noowenz.daggerrxjavamvp.registerModule.presenter.RegisterPresenterImpl;
+
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -23,14 +28,18 @@ import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.subscribers.DisposableSubscriber;
+import rx.Observable;
+import rx.Subscription;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 import static android.text.TextUtils.isEmpty;
 import static android.util.Patterns.EMAIL_ADDRESS;
 
 public class RegisterActivity extends AppCompatActivity implements IRegisterView {
-
     @BindView(R.id.et_name)
     EditText etName;
     @BindView(R.id.et_email)

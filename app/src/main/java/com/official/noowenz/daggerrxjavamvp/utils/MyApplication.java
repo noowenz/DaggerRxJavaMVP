@@ -1,4 +1,4 @@
-package com.official.noowenz.daggerrxjavamvp;
+package com.official.noowenz.daggerrxjavamvp.utils;
 
 import android.app.Application;
 import android.content.Context;
