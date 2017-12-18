@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/tv_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickFirst"
+        android:text="First" />
+
+    <Button
+        android:id="@+id/tv_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickSecond"
+        android:text="Second" />
+
+    <Button
+        android:id="@+id/tv_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickThird"
+        android:text="Third" />
+
+    <Button
+        android:id="@+id/tv_forth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickForth"
+        android:text="Forth" />
+
+    <Button
+        android:id="@+id/tv_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickSignUp"
+        android:text="Sign Up" />
+
+</LinearLayout>

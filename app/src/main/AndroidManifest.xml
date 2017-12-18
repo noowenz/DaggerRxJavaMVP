@@ -10,14 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".registerModule.view.RegisterActivity">
+        <activity android:name=".BasicRx.BasicRxJava">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".pagination.Pagination"></activity>
+        <activity android:name=".pagination.Pagination" />
+        <activity android:name=".registerModule.view.RegisterActivity" />
+        <activity android:name=".BasicRx.RxJavaSimpleActivity" />
+        <activity android:name=".BasicRx.NamesActivity" />
+        <activity android:name=".BasicRx.BooksActivity" />
+        <activity android:name=".BasicRx.SchedulerActivity"></activity>
     </application>
 
 </manifest>

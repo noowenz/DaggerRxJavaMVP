@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/scheduleLongRunningOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        android:lines="3"
+        android:text="Start something long"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp" />
+
+    <TextView
+        android:id="@+id/messagearea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scheduleLongRunningOperation"
+        android:text=""
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_alignBottom="@+id/scheduleLongRunningOperation"
+        android:layout_toEndOf="@+id/scheduleLongRunningOperation"
+        android:visibility="gone"
+        android:layout_toRightOf="@+id/scheduleLongRunningOperation"
+        android:layout_marginLeft="12dp" />
+
+</RelativeLayout>
